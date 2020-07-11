@@ -37,9 +37,9 @@ class Memory {
             this.init()
 
             // Bloquemos el clic derecho para evitar buscar las respuestas por el html
-            window.addEventListener("contextmenu", e => {
-                e.preventDefault()
-            }, false)
+            // window.addEventListener("contextmenu", e => {
+            //     e.preventDefault()
+            // }, false)
 
         })
 
@@ -118,7 +118,9 @@ class Memory {
            
             card.addEventListener('click', e => {
                
-                this.cardClicked(e)
+                if ( !e.target.classList.contains("acertada") 
+                    && !e.target.classList.contains("tarjeta-img"))
+                    this.cardClicked(e)
                 
             })            
 
